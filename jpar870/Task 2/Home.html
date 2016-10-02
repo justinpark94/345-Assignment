@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+		<div class="container">
+		  <nav class="fixed-nav-bar">
+		  	<div class="center">
+		  		<p>Overwatch</p>
+		  	</div>
+		  </nav>
+		</div>
+
+	<!-- right bar "Recent ACtivity" -->
+	<!-- <div class="container"> -->
+	  <div class="right-col">
+	  	<h2 class="activity-heading">Recent Activity</h2>
+	  	<p class="activity-date">Today 18:04</p>
+				<div class="activity">
+					<p>17:34 Living Room Lights On</p>
+					<p>17:02 Living Room Lights On</p>
+					<p>15:45 Door Opened/Closed</p>
+					<p>15:12 Temperature Set 20C</p>
+					<p>12:22 Door Opened/Closed</p>
+					<p>12:01 Door Opened/Closed</p>
+					<p>12:00 Bedroom1 Lights turned Off</p>
+					<p>12:00 Heating turned On 24C</p>
+				</div>
+			<p class="activity-date">May 12th</p>
+				<div class="activity">
+					<p>21:52 All Lights turned Off</p>
+					<p>21:51 All Doors Closed</p>
+					<p>21:51 HVAC turned Off</p>
+					<p>20:43 Kitchen Light turned On/Off</p>
+					<p>16:14 Living Room Lights turned Off</p>
+				</div>
+			<p class="activity-date">May 13th</p>
+				<div class="activity">
+					<p>22:05 All Lights turned Off</p>
+					<p>22:05 All Doors Closed/p>
+					<p>22:04 HVAC turned Off</p>
+					<p>20:24 Temperature Set 25C</p>
+					<p>19:56 Bedroom Lights turned On/Off</p>
+				</div>
+	  	<p class="activity-date">May 12th</p>
+	  		<div class="activity">
+	  			<p>12:00 Living Room Lights turned On</p>
+	  		</div>
+	  	<p class="activity-date">May 13th</p>
+	  </div>
+	<!-- </div> -->
+
+
+
+
+	<!-- left navigation bar -->
+	<ul>
+		<li><img class="logo" src="logo1.png"></li>
+	  <li><a class="active" href="home.html">Home</a></li>
+	  <li><a href="video.html">Video Surveillance</a></li>
+	  <li><a href="#contact">HVAC Controls</a></li>
+	  <li><a href="Security.html">Security System</a></li>
+	  <li><a href="light.html">Lighting</a></li>
+	  <li><a href="#about">Personalised Functions</a></li>
+	</ul>
+
+	<!-- Marginalised to fit between the left and right column -->
+	<div style="margin-left:250px; margin-right: 270px;">
+
+		<div style="padding-top: 50px">
+		  <p style="font-family: montserrat;">Welcome back,</p>
+		  <h2>RON SWANSON</h2>
+		</div>
+
+		<div class="report">
+			<p>&#10004; No suspicious activity to report</p>
+		</div>
+		<br>
+
+		<img class="dash" id="image" src="disarm.jpg">
+		<div style="margin-top: 20px">
+			<button class="buttonArm" id="arm" onclick="changeArm();">Arm</button>
+			<button class="buttonDisarm" id="disarm" onclick="changeDisarm();">Disarm</button>
+			<button class="buttonSleep" id="sleep" onclick="changeSleep();">Sleep</button>
+		</div>
+	</div>
+
+	<script> 
+
+	function changeArm() {
+	    var img = document.getElementById("image");
+	    var element = document.getElementById("arm");
+	    var element1 = document.getElementById("disarm");
+	    var element2 = document.getElementById("sleep");
+	    img.src="arm.jpg";
+	    element.className="buttonArm1";
+	    element1.className="buttonDisarm";
+	    element2.className="buttonSleep";
+	    return false;
+	}
+
+	function changeDisarm() {
+	    var img = document.getElementById("image");
+	    var element = document.getElementById("arm");
+	    var element1 = document.getElementById("disarm");
+	    var element2 = document.getElementById("sleep");
+	    img.src="disarm.jpg";
+	    element.className="buttonArm";
+	    element1.className="buttonDisarm1";
+	    element2.className="buttonSleep";
+	    return false;
+	}
+
+	function changeSleep() {
+	    var img = document.getElementById("image");
+	    var element = document.getElementById("arm");
+	    var element1 = document.getElementById("disarm");
+	    var element2 = document.getElementById("sleep");
+	    img.src="night.jpg";
+	    element.className="buttonArm";
+	    element1.className="buttonDisarm";
+	    element2.className="buttonSleep1";
+	    return false;
+	}
+
+
+</script>
+
+</body>
+</html>
