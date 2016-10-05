@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Security Sysmtem</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+		<div class="container">
+		  <nav class="fixed-nav-bar">
+		  	<div class="center">
+		  		<p>Overwatch</p>
+		  	</div>
+		  </nav>
+		</div>
+
+	<!-- right bar "Recent ACtivity" -->
+	<!-- <div class="container"> -->
+	  <div class="right-col">
+	  	<h2 class="activity-heading">Recent Activity</h2>
+	  	<p class="activity-date">Today 18:04</p>
+				<div class="activity">
+					<p>17:34 Living Room Lights On</p>
+					<p>17:02 Living Room Lights On</p>
+					<p>15:45 Door Opened/Closed</p>
+					<p>15:12 Temperature Set 20C</p>
+					<p>12:22 Door Opened/Closed</p>
+					<p>12:01 Door Opened/Closed</p>
+					<p>12:00 Bedroom1 Lights turned Off</p>
+					<p>12:00 Heating turned On 24C</p>
+				</div>
+			<p class="activity-date">May 12th</p>
+				<div class="activity">
+					<p>21:52 All Lights turned Off</p>
+					<p>21:51 All Doors Closed</p>
+					<p>21:51 HVAC turned Off</p>
+					<p>20:43 Kitchen Light turned On/Off</p>
+					<p>16:14 Living Room Lights turned Off</p>
+				</div>
+			<p class="activity-date">May 13th</p>
+				<div class="activity">
+					<p>22:05 All Lights turned Off</p>
+					<p>22:05 All Doors Closed/p>
+					<p>22:04 HVAC turned Off</p>
+					<p>20:24 Temperature Set 25C</p>
+					<p>19:56 Bedroom Lights turned On/Off</p>
+				</div>
+	  	<p class="activity-date">May 12th</p>
+	  		<div class="activity">
+	  			<p>12:00 Living Room Lights turned On</p>
+	  		</div>
+	  	<p class="activity-date">May 13th</p>
+	  </div>
+	<!-- </div> -->
+
+
+
+
+	<!-- left navigation bar -->
+	<ul>
+		<li><img class="logo" src="logo1.png"></li>
+	  <li><a href="home.html">Home</a></li>
+	  <li><a href="video.html">Video Surveillance</a></li>
+	  <li><a href="#contact">HVAC Controls</a></li>
+	  <li><a class="active" href="#Security.html">Security System</a></li>
+	  <li><a href="light.html">Lighting</a></li>
+	  <li><a href="#about">Personalised Functions</a></li>
+	</ul>
+
+	<!-- Marginalised to fit between the left and right column -->
+	<div style="margin-left:250px; margin-right: 270px;">
+		<div style="padding-top: 50px;">
+			  <h2>First Storey</h2>
+		</div>
+
+		<!-- The button that affects all lights -->
+		<div style="margin-bottom: 20px" class="first">
+			<button id="on" style="width:140px" class="buttonOn" onclick="changeOn();">UNLOCK</button>
+			<button id="off" style="width:140px" class="buttonOff" onclick="changeOff();">LOCK</button>
+			<p style="font-weight: bold" class="first2">ALL DOORS</p>
+		</div>
+
+		<hr size="13" color="#f2f2f2" >
+
+		<!-- Front Door Controls -->
+		<div style="margin-top: 20px" class="first">
+			<button id="lRoomOn" style="width:140px" class="buttonOn1" onclick="changeOn1();">UNLOCK</button>
+			<button id="lRoomOff" style="width:140px" class="buttonOff" onclick="changeOff1();">LOCK</button>
+			<p class="first2">Front Door</p>
+		</div>
+
+		<!-- Back Door Controls -->
+		<div style="margin-top: 20px" class="first">
+			<button id="bRoomOn" style="width:140px" class="buttonOn1" onclick="changeOn2();">UNLOCK</button>
+			<button id="bRoomOff" style="width:140px" class="buttonOff" onclick="changeOff2();">LOCK</button>
+			<p class="first2">Back Door</p>
+		</div>
+
+		<!-- Front Gate -->
+		<div style="margin-top: 20px" class="first">
+			<button id="bRoomOn1" style="width:140px" class="buttonOn1" onclick="changeOn3();">UNLOCK</button>
+			<button id="bRoomOff1" style="width:140px" class="buttonOff" onclick="changeOff3();">LOCK</button>
+			<p class="first2">Front Gate</p>
+		</div>
+
+		<!-- Hallway lights -->
+		<div style="margin-top: 20px" class="first">
+			<button id="hallOn" style="width:140px" class="buttonOn" onclick="changeOn4();">UNLOCK</button>
+			<button id="hallOff" style="width:140px" class="buttonOff1" onclick="changeOff4();">LOCK</button>
+			<p class="first2">Garage Door 1</p>
+		</div>
+
+		<!-- Kitchen lights -->
+		<div style="margin-top: 20px" class="first">
+			<button id="kitchenOn" style="width:140px" class="buttonOn" onclick="changeOn5();">UNLOCK</button>
+			<button id="kitchenOff" style="width:140px" class="buttonOff1" onclick="changeOff5();">LOCK</button>
+			<p class="first2">Garage Door 2</p>
+		</div>
+
+	<script> 
+
+	/*All Lights*/
+	function changeOn() {
+	    var element = document.getElementById("on");
+	    var element1 = document.getElementById("off");
+	    var element2 = document.getElementById("lRoomOn");
+	    var element3 = document.getElementById("lRoomOff");
+	    var element4 = document.getElementById("bRoomOn");
+	    var element5 = document.getElementById("bRoomOff");
+	    var element6 = document.getElementById("bRoomOn1");
+	    var element7 = document.getElementById("bRoomOff1");
+	    var element8 = document.getElementById("hallOn");
+	    var element9 = document.getElementById("hallOff");
+	    var element10 = document.getElementById("kitchenOn");
+	    var element11 = document.getElementById("kitchenOff");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn1";
+	    element3.className="buttonOff";
+	    element4.className="buttonOn1";
+	    element5.className="buttonOff";
+	    element6.className="buttonOn1";
+	    element7.className="buttonOff";
+	    element8.className="buttonOn1";
+	    element9.className="buttonOff";
+	    element10.className="buttonOn1";
+	    element11.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff() {
+	    var element = document.getElementById("off");
+	    var element1 = document.getElementById("on");
+	    var element2 = document.getElementById("lRoomOn");
+	    var element3 = document.getElementById("lRoomOff");
+	    var element4 = document.getElementById("bRoomOn");
+	    var element5 = document.getElementById("bRoomOff");
+	    var element6 = document.getElementById("bRoomOn1");
+	    var element7 = document.getElementById("bRoomOff1");
+	    var element8 = document.getElementById("hallOn");
+	    var element9 = document.getElementById("hallOff");
+	    var element10 = document.getElementById("kitchenOn");
+	    var element11 = document.getElementById("kitchenOff");
+
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff1";
+	    element4.className="buttonOn";
+	    element5.className="buttonOff1";
+	    element6.className="buttonOn";
+	    element7.className="buttonOff1";
+	    element8.className="buttonOn";
+	    element9.className="buttonOff1";
+	    element10.className="buttonOn";
+	    element11.className="buttonOff1";
+	    return false;
+	}
+
+	/*Living Room*/
+	function changeOn1() {
+	    var element = document.getElementById("lRoomOn");
+	    var element1 = document.getElementById("lRoomOff");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff1() {
+	    var element = document.getElementById("lRoomOff");
+	    var element1 = document.getElementById("lRoomOn");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	/*Tom's bedroom*/
+	function changeOn2() {
+	    var element = document.getElementById("bRoomOn");
+	    var element1 = document.getElementById("bRoomOff");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff2() {
+	    var element = document.getElementById("bRoomOff");
+	    var element1 = document.getElementById("bRoomOn");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	/*Bedroom3*/
+	function changeOn3() {
+	    var element = document.getElementById("bRoomOn1");
+	    var element1 = document.getElementById("bRoomOff1");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff3() {
+	    var element = document.getElementById("bRoomOff1");
+	    var element1 = document.getElementById("bRoomOn1");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	/*Hallway lights*/
+	function changeOn4() {
+	    var element = document.getElementById("hallOn");
+	    var element1 = document.getElementById("hallOff");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff4() {
+	    var element = document.getElementById("hallOff");
+	    var element1 = document.getElementById("hallOn");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	/*litchen lights*/
+	function changeOn5() {
+	    var element = document.getElementById("kitchenOn");
+	    var element1 = document.getElementById("kitchenOff");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOn1";
+	    element1.className="buttonOff";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+	function changeOff5() {
+	    var element = document.getElementById("kitchenOff");
+	    var element1 = document.getElementById("kitchenOn");
+	    var element2 = document.getElementById("on");
+	    var element3 = document.getElementById("off");
+	    element.className="buttonOff1";
+	    element1.className="buttonOn";
+	    element2.className="buttonOn";
+	    element3.className="buttonOff";
+	    return false;
+	}
+
+
+
+
+</script>
+
+		
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Surveillance</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+
+		<div class="container">
+		  <nav class="fixed-nav-bar">
+		  	<div class="center">
+		  		<p>Overwatch</p>
+		  	</div>
+		  </nav>
+		</div>
+
+		<!-- right bar "Recent ACtivity" -->
+		
+		<div class="right-col">
+			<h2 class="activity-heading">Recent Activity</h2>
+			<p class="activity-date">Today 18:04</p>
+				<div class="activity">
+					<p>17:34 Living Room Lights On</p>
+					<p>17:02 Living Room Lights On</p>
+					<p>15:45 Door Opened/Closed</p>
+					<p>15:12 Temperature Set 20C</p>
+					<p>12:22 Door Opened/Closed</p>
+					<p>12:01 Door Opened/Closed</p>
+					<p>12:00 Bedroom1 Lights turned Off</p>
+					<p>12:00 Heating turned On 24C</p>
+				</div>
+			<p class="activity-date">May 12th</p>
+				<div class="activity">
+					<p>21:52 All Lights turned Off</p>
+					<p>21:51 All Doors Closed</p>
+					<p>21:51 HVAC turned Off</p>
+					<p>20:43 Kitchen Light turned On/Off</p>
+					<p>16:14 Living Room Lights turned Off</p>
+				</div>
+			<p class="activity-date">May 13th</p>
+				<div class="activity">
+					<p>22:05 All Lights turned Off</p>
+					<p>22:05 All Doors Closed/p>
+					<p>22:04 HVAC turned Off</p>
+					<p>20:24 Temperature Set 25C</p>
+					<p>19:56 Bedroom Lights turned On/Off</p>
+				</div>
+		</div>
+		
+
+
+
+
+		<!-- left navigation bar -->
+		<ul>
+			<li><img class="logo" src="logo1.png"></li>
+		  <li><a href="home.html">Home</a></li>
+		  <li><a class="active" href="video.html">Video Surveillance</a></li>
+		  <li><a href="#contact">HVAC Controls</a></li>
+		  <li><a href="security.html">Security System</a></li>
+		  <li><a href="light.html">Lighting</a></li>
+		  <li><a href="#about">Personalised Functions</a></li>
+		</ul>
+
+		<!-- Marginalised to fit between the left and right column -->
+		<div style="margin-left:250px; margin-right: 270px;">
+			<div style="padding-top: 50px;">
+			  <h2>First Storey</h2>
+			</div>
+			
+			<div class="responsive">
+			  <div class="img">
+			      <img src="Living Room.jpg">
+			    <div class="desc">Living Room</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="Kitchen.jpg" alt="Kitchen">
+			    <div class="desc">Kitchen</div>
+			  </div>
+			</div>
+			
+			<div class="responsive">
+			  <div class="img">
+			    <img src="hallway.jpg" alt="Hallway 1">
+			    <div class="desc">Hallway 1</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="bed1.jpg" alt="Bedroom1">
+			    <div class="desc">Bedroom 1</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="Garage.jpg" alt="Garage">
+			    <div class="desc">Garage</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="backyard.jpg">
+			    <div class="desc">Backyard</div>
+			  </div>
+			</div>
+
+			<div style="margin-top: 50px;">
+			  <h2>Second Storey</h2>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="bed2.jpg" alt="Bedroom2">
+			    <div class="desc">Bedroom 2</div>
+			  </div>
+			</div>
+
+			<div class="responsive">
+			  <div class="img">
+			    <img src="Guest.jpg" alt="Guest Room">
+			    <div class="desc">Guest Room</div>
+			  </div>
+			</div>
+
+			
+
+			
+
+
+			<div class="clearfix"></div>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			  <span class="close">x</span>
+			  <img class="modal-content" id="img01">
+			  <div id="caption"></div>
+			</div>
+		</div>
+			
+	<script>
+		// Get the modal
+		var modal = document.getElementById('myModal');
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() { 
+		    modal.style.display = "none";
+		}
+
+		// Get all images and insert the clicked image inside the modal
+		// Get the content of the image description and insert it inside the modal image caption
+		var images = document.getElementsByTagName('img');
+		var modalImg = document.getElementById("img01");
+		var captionText = document.getElementById("caption");
+		var i;
+		for (i = 0; i < images.length; i++) {
+		   images[i].onclick = function(){
+		       modal.style.display = "block";
+		       modalImg.src = this.src;
+		       modalImg.alt = this.alt;
+		       captionText.innerHTML = this.nextElementSibling.innerHTML;
+		   }
+		}
+	</script>
+</body>
+</html>
